@@ -1,0 +1,63 @@
+@*
+ * This template takes a single argument, a String containing a
+ * message to display.
+ *@
+@(message: String)
+
+@*
+ * Call the the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+ *@
+@main("Welcome to Play") {
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <form action="@routes.PersonController.add()" method="post">
+
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input type="text" name="id" id="id" class="form-control" />
+                    </div>
+                    <div>
+                        <label for="name">NAME</label>
+                        <input type="text" name="name" id="name" class="form-control" />
+                    </div>
+                    <div>
+                        <label for="surname">SURNAME</label>
+                        <input type="text" name="surname" id="surname" class="form-control" />
+                    </div>
+                    <div>
+                        <label for="gender">GENDER</label>
+                        <input type="text" name="gender" id="gender" class="form-control"/>
+
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-default">Add Person</button>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th>
+                            <th>SURNAME</th>
+                            <th>GENDER</th>
+                        </tr>
+                    </thead>
+                    <tbody id="personBody">
+
+                        <script type="text/javascript" src="@routes.Assets.versioned("js/person.js")"></script>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}

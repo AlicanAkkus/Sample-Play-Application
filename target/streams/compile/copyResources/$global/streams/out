@@ -1,0 +1,4 @@
+[debug] Copy resource mappings: 
+[debug] 	(/home/wora/activator-dist-1.3.7/MyApps/conf/application.conf,/home/wora/activator-dist-1.3.7/MyApps/target/scala-2.11/classes/application.conf)
+[debug] 	(/home/wora/activator-dist-1.3.7/MyApps/conf/routes,/home/wora/activator-dist-1.3.7/MyApps/target/scala-2.11/classes/routes)
+[debug] 	(/home/wora/activator-dist-1.3.7/MyApps/conf/logback.xml,/home/wora/activator-dist-1.3.7/MyApps/target/scala-2.11/classes/logback.xml)

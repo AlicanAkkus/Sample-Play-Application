@@ -1,0 +1,4 @@
+[error] /home/wora/activator-dist-1.3.7/MyApps/app/assets/js/person.coffee:7: unexpected /
+[error]     $("#personBody").append $("<td>").text <button>Delete</button>
+[error]                                                           ^
+[error] one error found
