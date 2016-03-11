@@ -7,6 +7,7 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import services.PersonService;
+import views.html.person;
 
 import java.util.ArrayList;
 
@@ -33,6 +34,14 @@ public class PersonController extends Controller {
         ArrayList<Person> personArrayList = PersonService.getInstance().getAllPerson();
         logger.info("Person list size : "+personArrayList.size());
         return ok(Json.toJson(personArrayList));
+    }
+
+
+    public Result viewPerson(){
+        logger.info("get persons method is started..");
+        ArrayList<Person> personArrayList = PersonService.getInstance().getAllPerson();
+        logger.info("Person list size : "+personArrayList.size());
+        return ok(person.render(personArrayList));
     }
 
     public Result removeAll(){

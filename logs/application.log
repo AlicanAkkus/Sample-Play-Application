@@ -1,6 +1,42 @@
-2016-03-10 22:51:34,097 [INFO] from play.core.server.NettyServer in pool-6-thread-2 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
-2016-03-10 22:51:42,898 [INFO] from application in ForkJoinPool-1-worker-1 - ApplicationTimer demo: Starting application at 2016-03-10T20:51:42.897Z
-2016-03-10 22:51:43,248 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
-2016-03-10 22:54:06,613 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Stopping application at 2016-03-10T20:54:06.613Z after 144s.
-2016-03-10 22:54:06,755 [INFO] from application in application-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2016-03-10T20:54:06.755Z
-2016-03-10 22:54:06,905 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
+2016-03-11 22:27:09,269 [INFO] from play.core.server.NettyServer in pool-6-thread-1 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2016-03-11 22:28:46,232 [INFO] from application in ForkJoinPool-1-worker-1 - ApplicationTimer demo: Starting application at 2016-03-11T20:28:46.231Z
+2016-03-11 22:28:46,618 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2016-03-11 22:29:30,073 [INFO] from application in application-akka.actor.default-dispatcher-8 - ApplicationTimer demo: Stopping application at 2016-03-11T20:29:30.073Z after 44s.
+2016-03-11 22:29:30,224 [INFO] from application in application-akka.actor.default-dispatcher-8 - ApplicationTimer demo: Starting application at 2016-03-11T20:29:30.224Z
+2016-03-11 22:29:30,315 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
+2016-03-11 22:29:59,227 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Stopping application at 2016-03-11T20:29:59.226Z after 29s.
+2016-03-11 22:29:59,372 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2016-03-11T20:29:59.372Z
+2016-03-11 22:29:59,461 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2016-03-11 22:31:09,017 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Stopping application at 2016-03-11T20:31:09.017Z after 70s.
+2016-03-11 22:31:09,132 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Starting application at 2016-03-11T20:31:09.132Z
+2016-03-11 22:31:09,209 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
+2016-03-11 22:31:29,773 [INFO] from application in application-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Stopping application at 2016-03-11T20:31:29.773Z after 20s.
+2016-03-11 22:31:29,876 [INFO] from application in application-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Starting application at 2016-03-11T20:31:29.876Z
+2016-03-11 22:31:29,943 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
+2016-03-11 22:35:13,349 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Stopping application at 2016-03-11T20:35:13.349Z after 224s.
+2016-03-11 22:35:13,447 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2016-03-11T20:35:13.447Z
+2016-03-11 22:35:13,523 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2016-03-11 22:39:59,785 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Stopping application at 2016-03-11T20:39:59.785Z after 286s.
+2016-03-11 22:39:59,880 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Starting application at 2016-03-11T20:39:59.880Z
+2016-03-11 22:39:59,951 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
+2016-03-11 22:43:36,740 [INFO] from application in application-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Stopping application at 2016-03-11T20:43:36.740Z after 217s.
+2016-03-11 22:43:36,840 [INFO] from application in application-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Starting application at 2016-03-11T20:43:36.839Z
+2016-03-11 22:43:36,897 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
+2016-03-11 22:44:05,124 [INFO] from application in application-akka.actor.default-dispatcher-8 - ApplicationTimer demo: Stopping application at 2016-03-11T20:44:05.124Z after 29s.
+2016-03-11 22:44:05,192 [INFO] from application in application-akka.actor.default-dispatcher-8 - ApplicationTimer demo: Starting application at 2016-03-11T20:44:05.192Z
+2016-03-11 22:44:05,240 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
+2016-03-11 22:51:32,868 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Stopping application at 2016-03-11T20:51:32.868Z after 447s.
+2016-03-11 22:51:32,952 [INFO] from application in application-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2016-03-11T20:51:32.951Z
+2016-03-11 22:51:33,016 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2016-03-11 22:56:42,194 [INFO] from application in application-akka.actor.default-dispatcher-9 - ApplicationTimer demo: Stopping application at 2016-03-11T20:56:42.194Z after 310s.
+2016-03-11 22:56:42,267 [INFO] from application in application-akka.actor.default-dispatcher-9 - ApplicationTimer demo: Starting application at 2016-03-11T20:56:42.267Z
+2016-03-11 22:56:42,316 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
+2016-03-11 23:01:49,666 [INFO] from application in application-akka.actor.default-dispatcher-9 - ApplicationTimer demo: Stopping application at 2016-03-11T21:01:49.666Z after 307s.
+2016-03-11 23:01:49,748 [INFO] from application in application-akka.actor.default-dispatcher-9 - ApplicationTimer demo: Starting application at 2016-03-11T21:01:49.748Z
+2016-03-11 23:01:49,808 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
+2016-03-11 23:05:00,670 [INFO] from application in application-akka.actor.default-dispatcher-9 - ApplicationTimer demo: Stopping application at 2016-03-11T21:05:00.670Z after 191s.
+2016-03-11 23:05:00,738 [INFO] from application in application-akka.actor.default-dispatcher-9 - ApplicationTimer demo: Starting application at 2016-03-11T21:05:00.738Z
+2016-03-11 23:05:00,790 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
+2016-03-11 23:05:46,750 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Stopping application at 2016-03-11T21:05:46.750Z after 46s.
+2016-03-11 23:05:46,857 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Starting application at 2016-03-11T21:05:46.857Z
+2016-03-11 23:05:46,926 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)

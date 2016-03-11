@@ -2,6 +2,7 @@ package controllers;
 
 import play.mvc.*;
 
+import services.PersonService;
 import views.html.*;
 
 /**
@@ -17,7 +18,7 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        return ok(index.render("Your new application is ready."));
+       return ok(index.render(PersonService.getInstance().getAllPerson()));
     }
 
 }

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wora/activator-dist-1.3.7/MyApps/conf/routes
-// @DATE:Thu Mar 10 22:50:54 EET 2016
+// @DATE:Fri Mar 11 22:37:03 EET 2016
 
 package router
 
@@ -24,7 +24,7 @@ class Routes(
   AsyncController_3: controllers.AsyncController,
   // @LINE:13
   PersonController_0: controllers.PersonController,
-  // @LINE:19
+  // @LINE:20
   Assets_4: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -39,7 +39,7 @@ class Routes(
     AsyncController_3: controllers.AsyncController,
     // @LINE:13
     PersonController_0: controllers.PersonController,
-    // @LINE:19
+    // @LINE:20
     Assets_4: controllers.Assets
   ) = this(errorHandler, HomeController_2, CountController_1, AsyncController_3, PersonController_0, Assets_4, "/")
 
@@ -60,6 +60,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """message""", """controllers.AsyncController.message"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """add""", """controllers.PersonController.add"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getPersons""", """controllers.PersonController.getPersons"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """viewPerson""", """controllers.PersonController.viewPerson"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """removeAll""", """controllers.PersonController.removeAll"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """delete/""" + "$" + """id<[^/]+>""", """controllers.PersonController.delete(id:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
@@ -156,10 +157,27 @@ class Routes(
   )
 
   // @LINE:15
-  private[this] lazy val controllers_PersonController_removeAll5_route = Route("GET",
+  private[this] lazy val controllers_PersonController_viewPerson5_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("viewPerson")))
+  )
+  private[this] lazy val controllers_PersonController_viewPerson5_invoker = createInvoker(
+    PersonController_0.viewPerson,
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.PersonController",
+      "viewPerson",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """viewPerson"""
+    )
+  )
+
+  // @LINE:16
+  private[this] lazy val controllers_PersonController_removeAll6_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("removeAll")))
   )
-  private[this] lazy val controllers_PersonController_removeAll5_invoker = createInvoker(
+  private[this] lazy val controllers_PersonController_removeAll6_invoker = createInvoker(
     PersonController_0.removeAll,
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -172,11 +190,11 @@ class Routes(
     )
   )
 
-  // @LINE:16
-  private[this] lazy val controllers_PersonController_delete6_route = Route("GET",
+  // @LINE:17
+  private[this] lazy val controllers_PersonController_delete7_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("delete/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_PersonController_delete6_invoker = createInvoker(
+  private[this] lazy val controllers_PersonController_delete7_invoker = createInvoker(
     PersonController_0.delete(fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -189,11 +207,11 @@ class Routes(
     )
   )
 
-  // @LINE:19
-  private[this] lazy val controllers_Assets_versioned7_route = Route("GET",
+  // @LINE:20
+  private[this] lazy val controllers_Assets_versioned8_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned7_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned8_invoker = createInvoker(
     Assets_4.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -240,21 +258,27 @@ class Routes(
       }
   
     // @LINE:15
-    case controllers_PersonController_removeAll5_route(params) =>
+    case controllers_PersonController_viewPerson5_route(params) =>
       call { 
-        controllers_PersonController_removeAll5_invoker.call(PersonController_0.removeAll)
+        controllers_PersonController_viewPerson5_invoker.call(PersonController_0.viewPerson)
       }
   
     // @LINE:16
-    case controllers_PersonController_delete6_route(params) =>
-      call(params.fromPath[String]("id", None)) { (id) =>
-        controllers_PersonController_delete6_invoker.call(PersonController_0.delete(id))
+    case controllers_PersonController_removeAll6_route(params) =>
+      call { 
+        controllers_PersonController_removeAll6_invoker.call(PersonController_0.removeAll)
       }
   
-    // @LINE:19
-    case controllers_Assets_versioned7_route(params) =>
+    // @LINE:17
+    case controllers_PersonController_delete7_route(params) =>
+      call(params.fromPath[String]("id", None)) { (id) =>
+        controllers_PersonController_delete7_invoker.call(PersonController_0.delete(id))
+      }
+  
+    // @LINE:20
+    case controllers_Assets_versioned8_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned7_invoker.call(Assets_4.versioned(path, file))
+        controllers_Assets_versioned8_invoker.call(Assets_4.versioned(path, file))
       }
   }
 }

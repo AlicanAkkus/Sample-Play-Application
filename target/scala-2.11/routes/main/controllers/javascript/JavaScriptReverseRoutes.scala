@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wora/activator-dist-1.3.7/MyApps/conf/routes
-// @DATE:Thu Mar 10 22:50:54 EET 2016
+// @DATE:Fri Mar 11 22:37:03 EET 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -24,26 +24,6 @@ package controllers.javascript {
 
   
     // @LINE:16
-    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.PersonController.delete",
-      """
-        function(id0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "delete/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id0))})
-        }
-      """
-    )
-  
-    // @LINE:14
-    def getPersons: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.PersonController.getPersons",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "getPersons"})
-        }
-      """
-    )
-  
-    // @LINE:15
     def removeAll: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PersonController.removeAll",
       """
@@ -63,9 +43,39 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:15
+    def viewPerson: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PersonController.viewPerson",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "viewPerson"})
+        }
+      """
+    )
+  
+    // @LINE:14
+    def getPersons: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PersonController.getPersons",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "getPersons"})
+        }
+      """
+    )
+  
+    // @LINE:17
+    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PersonController.delete",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "delete/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("id", encodeURIComponent(id0))})
+        }
+      """
+    )
+  
   }
 
-  // @LINE:19
+  // @LINE:20
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -73,7 +83,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:19
+    // @LINE:20
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

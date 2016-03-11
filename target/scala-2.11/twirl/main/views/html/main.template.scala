@@ -76,7 +76,7 @@ Seq[Any](format.raw/*7.32*/("""
 object main extends main_Scope0.main
               /*
                   -- GENERATED --
-                  DATE: Sun Mar 06 14:48:06 EET 2016
+                  DATE: Fri Mar 11 22:31:47 EET 2016
                   SOURCE: /home/wora/activator-dist-1.3.7/MyApps/app/views/main.scala.html
                   HASH: 097fe92d358267ebfd1fc2f0268f552f08dd58a6
                   MATRIX: 1002->260|1127->290|1155->292|1235->397|1271->406|1306->414|1332->419|1390->450|1405->456|1478->508|1562->565|1577->571|1647->620|1762->708|1777->714|1845->760|1933->821|1948->827|2009->866|2071->990|2108->1000|2136->1007|2168->1012

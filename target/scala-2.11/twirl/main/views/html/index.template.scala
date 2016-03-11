@@ -21,21 +21,25 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class index extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
+class index extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[List[Person],play.twirl.api.HtmlFormat.Appendable] {
 
   /*
- * This template takes a single argument, a String containing a
- * message to display.
- */
-  def apply/*5.2*/(message: String):play.twirl.api.HtmlFormat.Appendable = {
+ * Call the the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+
+@main("Welcome to Play")("Testtt")
+*/
+  def apply/*8.2*/(persons : List[Person]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*5.19*/("""
+Seq[Any](format.raw/*8.26*/("""
 
-"""),format.raw/*11.4*/("""
-"""),_display_(/*12.2*/main("Welcome to Play")/*12.25*/ {_display_(Seq[Any](format.raw/*12.27*/("""
+
+
+"""),_display_(/*12.2*/main("Welcome to Play")/*12.25*/{_display_(Seq[Any](format.raw/*12.26*/("""
 
 
     """),format.raw/*15.5*/("""<div class="container">
@@ -80,22 +84,30 @@ Seq[Any](format.raw/*5.19*/("""
                     </thead>
                     <tbody id="personBody">
 
-                        <script type="text/javascript" src=""""),_display_(/*57.62*/routes/*57.68*/.Assets.versioned("js/person.js")),format.raw/*57.101*/(""""></script>
+                        """),_display_(/*57.26*/for(person <- persons) yield /*57.48*/{_display_(Seq[Any](format.raw/*57.49*/("""
+                            """),format.raw/*58.29*/("""<td>"""),_display_(/*58.34*/person/*58.40*/.getId),format.raw/*58.46*/("""</td>
+                            <td>"""),_display_(/*59.34*/person/*59.40*/.getName),format.raw/*59.48*/("""</td>
+                            <td>"""),_display_(/*60.34*/person/*60.40*/.getSurname),format.raw/*60.51*/("""</td>
+                            <td>"""),_display_(/*61.34*/person/*61.40*/.getGender),format.raw/*61.50*/("""</td>
+                            """),_display_(/*62.30*/defining("/delete/" + person.getId)/*62.65*/ { deleteUrl =>_display_(Seq[Any](format.raw/*62.80*/("""
+                            """),format.raw/*63.29*/("""<td><a href=""""),_display_(/*63.43*/deleteUrl),format.raw/*63.52*/("""" class='form-control'>Delete</a></td>
+                            """)))}),format.raw/*64.30*/("""
+                        """)))}),format.raw/*65.26*/("""
 
-                    </tbody>
+                    """),format.raw/*67.21*/("""</tbody>
                 </table>
             </div>
         </div>
     </div>
-""")))}),format.raw/*64.2*/("""
+""")))}),format.raw/*72.2*/("""
 """))
       }
     }
   }
 
-  def render(message:String): play.twirl.api.HtmlFormat.Appendable = apply(message)
+  def render(persons:List[Person]): play.twirl.api.HtmlFormat.Appendable = apply(persons)
 
-  def f:((String) => play.twirl.api.HtmlFormat.Appendable) = (message) => apply(message)
+  def f:((List[Person]) => play.twirl.api.HtmlFormat.Appendable) = (persons) => apply(persons)
 
   def ref: this.type = this
 
@@ -105,17 +117,20 @@ Seq[Any](format.raw/*5.19*/("""
 }
 
 /*
- * This template takes a single argument, a String containing a
- * message to display.
- */
+ * Call the the `main` template with two arguments. The first
+ * argument is a `String` with the title of the page, the second
+ * argument is an `Html` object containing the body of the page.
+
+@main("Welcome to Play")("Testtt")
+*/
 object index extends index_Scope0.index
               /*
                   -- GENERATED --
-                  DATE: Thu Mar 10 22:38:44 EET 2016
+                  DATE: Fri Mar 11 23:06:09 EET 2016
                   SOURCE: /home/wora/activator-dist-1.3.7/MyApps/app/views/index.scala.html
-                  HASH: 4cdf7ed0d80ed5cebb31a107e4bf036e1aaff114
-                  MATRIX: 834->95|946->112|975->312|1003->314|1035->337|1075->339|1109->346|1252->462|1267->468|1311->491|2890->2043|2905->2049|2960->2082|3103->2195
-                  LINES: 30->5|35->5|37->11|38->12|38->12|38->12|41->15|44->18|44->18|44->18|83->57|83->57|83->57|90->64
+                  HASH: 8555a65e818dc789afd89502ca34955e84b0cb25
+                  MATRIX: 980->235|1099->259|1130->264|1162->287|1201->288|1235->295|1378->411|1393->417|1437->440|2980->1956|3018->1978|3057->1979|3114->2008|3146->2013|3161->2019|3188->2025|3254->2064|3269->2070|3298->2078|3364->2117|3379->2123|3411->2134|3477->2173|3492->2179|3523->2189|3585->2224|3629->2259|3682->2274|3739->2303|3780->2317|3810->2326|3909->2394|3966->2420|4016->2442|4126->2522
+                  LINES: 33->8|38->8|42->12|42->12|42->12|45->15|48->18|48->18|48->18|87->57|87->57|87->57|88->58|88->58|88->58|88->58|89->59|89->59|89->59|90->60|90->60|90->60|91->61|91->61|91->61|92->62|92->62|92->62|93->63|93->63|93->63|94->64|95->65|97->67|102->72
                   -- GENERATED --
               */
           

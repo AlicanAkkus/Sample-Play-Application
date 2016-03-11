@@ -12,6 +12,7 @@ GET     /message                    controllers.AsyncController.message
 # add person operation
 POST    /add                        controllers.PersonController.add
 GET     /getPersons                 controllers.PersonController.getPersons
+GET     /viewPerson                 controllers.PersonController.viewPerson
 GET     /removeAll                  controllers.PersonController.removeAll
 GET     /delete/:id                 controllers.PersonController.delete(id: String)
 

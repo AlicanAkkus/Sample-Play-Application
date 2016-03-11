@@ -1,15 +1,15 @@
 @*
- * This template takes a single argument, a String containing a
- * message to display.
- *@
-@(message: String)
-
-@*
  * Call the the `main` template with two arguments. The first
  * argument is a `String` with the title of the page, the second
  * argument is an `Html` object containing the body of the page.
- *@
-@main("Welcome to Play") {
+
+@main("Welcome to Play")("Testtt")
+*@
+@(persons : List[Person])
+
+
+
+@main("Welcome to Play"){
 
 
     <div class="container">
@@ -54,7 +54,15 @@
                     </thead>
                     <tbody id="personBody">
 
-                        <script type="text/javascript" src="@routes.Assets.versioned("js/person.js")"></script>
+                        @for(person <- persons){
+                            <td>@person.getId</td>
+                            <td>@person.getName</td>
+                            <td>@person.getSurname</td>
+                            <td>@person.getGender</td>
+                            @defining("/delete/" + person.getId) { deleteUrl =>
+                            <td><a href="@deleteUrl" class='form-control'>Delete</a></td>
+                            }
+                        }
 
                     </tbody>
                 </table>
