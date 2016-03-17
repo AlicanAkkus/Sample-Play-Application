@@ -13731,7 +13731,7 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.11!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.6!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 5035ms :: artifacts dl 145ms
+[debug] :: resolution report :: resolve 3428ms :: artifacts dl 55ms
 [debug] 	report for default#myapps-build;0.1-SNAPSHOT compile produced in /home/wora/activator-dist-1.3.7/MyApps/project/target/resolution-cache/reports/default-myapps-build-compile.xml
 [debug] 	report for default#myapps-build;0.1-SNAPSHOT runtime produced in /home/wora/activator-dist-1.3.7/MyApps/project/target/resolution-cache/reports/default-myapps-build-runtime.xml
 [debug] 	report for default#myapps-build;0.1-SNAPSHOT test produced in /home/wora/activator-dist-1.3.7/MyApps/project/target/resolution-cache/reports/default-myapps-build-test.xml
@@ -13745,5 +13745,5 @@
 [debug] 	report for default#myapps-build;0.1-SNAPSHOT docs produced in /home/wora/activator-dist-1.3.7/MyApps/project/target/resolution-cache/reports/default-myapps-build-docs.xml
 [debug] 	report for default#myapps-build;0.1-SNAPSHOT pom produced in /home/wora/activator-dist-1.3.7/MyApps/project/target/resolution-cache/reports/default-myapps-build-pom.xml
 [debug] 	report for default#myapps-build;0.1-SNAPSHOT scala-tool produced in /home/wora/activator-dist-1.3.7/MyApps/project/target/resolution-cache/reports/default-myapps-build-scala-tool.xml
-[debug] 	resolve done (5035ms resolve - 145ms download)
+[debug] 	resolve done (3428ms resolve - 55ms download)
 [info] Done updating.

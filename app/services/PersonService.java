@@ -3,6 +3,7 @@ package services;
 import models.Person;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by wora on 3/6/16.
@@ -10,11 +11,11 @@ import java.util.ArrayList;
 public class PersonService {
 
 
-    private ArrayList<Person> personList;
+    private HashMap<Integer,Person> personHMap;
     private static PersonService personService = null;
 
     private PersonService(){
-        this.personList = new ArrayList<>();
+        this.personHMap = new HashMap<>();
     }
     public static PersonService getInstance(){
         if(personService == null)
@@ -24,54 +25,42 @@ public class PersonService {
     }
 
     public void addPerson(Person person){
-        this.personList.add(person);
+        this.personHMap.put(person.getId(), person);
     }
 
-    public void deletePerson(String id){
-        for(Person person : personList){
-            if(person.getId().equalsIgnoreCase(id)){
-                personList.remove(person);
-                break;
-            }
+    public void deletePerson(int id){
+
+        if(personHMap.containsKey(id)){
+            personHMap.remove(id);
         }
+
     }
 
     public void updatePerson(Person person) throws Exception{
-        if(personList.contains(person)){
-            Person oldPerson = personList.get(personList.indexOf(person));
-            Person clonedPerson = (Person) oldPerson.clone();
 
-            clonedPerson.setName(person.getName());
-            clonedPerson.setSurname(person.getSurname());
-            clonedPerson.setGender(person.getGender());
-
-            personList.set(personList.indexOf(person), clonedPerson);
-
+        if(personHMap.containsKey(person.getId())){
+            personHMap.replace(person.getId(), person);
         }else{
-            personList.add(person);
+            personHMap.put(person.getId(), person);
         }
+
     }
 
-    public Person getPerson(String id){
-        Person person = new Person();
-        person.setId(id);
+    public Person getPerson(int id){
 
-
-        if(personList.contains(person)){
-            Person foundedPerson = personList.get(personList.indexOf(person));
-            return foundedPerson;
-        }else{
-            return person;
+        if(personHMap.containsKey(id)){
+            return personHMap.get(id);
         }
+
+        return null;
     }
 
-
-    public ArrayList<Person> getAllPerson(){
-        return this.personList;
+    public HashMap<Integer,Person> getAllPerson(){
+        return this.personHMap;
     }
 
     public void removeAll(){
-        this.personList.clear();
+        this.personHMap.clear();
     }
 
 

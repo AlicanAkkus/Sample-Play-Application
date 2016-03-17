@@ -5,7 +5,8 @@
 
 @main("Welcome to Play")("Testtt")
 *@
-@(persons : List[Person])
+@import java.util
+@(persons : util.HashMap[Integer,Person])
 
 
 
@@ -54,14 +55,16 @@
                     </thead>
                     <tbody id="personBody">
 
-                        @for(person <- persons){
-                            <td>@person.getId</td>
-                            <td>@person.getName</td>
-                            <td>@person.getSurname</td>
-                            <td>@person.getGender</td>
-                            @defining("/delete/" + person.getId) { deleteUrl =>
-                            <td><a href="@deleteUrl" class='form-control'>Delete</a></td>
-                            }
+                        @for( (personId, personObject) <- persons){
+                            <tr>
+                                <td>@personId</td>
+                                <td>@personObject.getName</td>
+                                <td>@personObject.getSurname</td>
+                                <td>@personObject.getGender</td>
+                                @defining("/delete/" + personId) { deleteUrl =>
+                                <td><a href="@deleteUrl" class='form-control'>Delete</a></td>
+                                }
+                            </tr>
                         }
 
                     </tbody>

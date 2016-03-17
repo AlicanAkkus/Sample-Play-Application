@@ -10,6 +10,7 @@ import services.PersonService;
 import views.html.person;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by wora on 3/6/16.
@@ -31,18 +32,11 @@ public class PersonController extends Controller {
 
     public Result getPersons(){
         logger.info("get persons method is started..");
-        ArrayList<Person> personArrayList = PersonService.getInstance().getAllPerson();
-        logger.info("Person list size : "+personArrayList.size());
-        return ok(Json.toJson(personArrayList));
+        HashMap<Integer,Person> personHMap = PersonService.getInstance().getAllPerson();
+        logger.info("Person list size : "+personHMap.size());
+        return ok(Json.toJson(personHMap));
     }
 
-
-    public Result viewPerson(){
-        logger.info("get persons method is started..");
-        ArrayList<Person> personArrayList = PersonService.getInstance().getAllPerson();
-        logger.info("Person list size : "+personArrayList.size());
-        return ok(person.render(personArrayList));
-    }
 
     public Result removeAll(){
         logger.info("Remove all person..");
@@ -50,7 +44,7 @@ public class PersonController extends Controller {
         return redirect(routes.HomeController.index());
     }
 
-    public Result delete(String id){
+    public Result delete(int id){
         logger.info("Remove person..");
         PersonService.getInstance().deletePerson(id);
         return redirect(routes.HomeController.index());

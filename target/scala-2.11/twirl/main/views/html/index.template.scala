@@ -21,31 +21,28 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class index extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[List[Person],play.twirl.api.HtmlFormat.Appendable] {
+     object index_Scope1 {
+import java.util
 
-  /*
- * Call the the `main` template with two arguments. The first
- * argument is a `String` with the title of the page, the second
- * argument is an `Html` object containing the body of the page.
+class index extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template1[util.HashMap[Integer, Person],play.twirl.api.HtmlFormat.Appendable] {
 
-@main("Welcome to Play")("Testtt")
-*/
-  def apply/*8.2*/(persons : List[Person]):play.twirl.api.HtmlFormat.Appendable = {
+  /**/
+  def apply/*9.2*/(persons : util.HashMap[Integer,Person]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*8.26*/("""
+Seq[Any](format.raw/*9.42*/("""
 
 
 
-"""),_display_(/*12.2*/main("Welcome to Play")/*12.25*/{_display_(Seq[Any](format.raw/*12.26*/("""
+"""),_display_(/*13.2*/main("Welcome to Play")/*13.25*/{_display_(Seq[Any](format.raw/*13.26*/("""
 
 
-    """),format.raw/*15.5*/("""<div class="container">
+    """),format.raw/*16.5*/("""<div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <form action=""""),_display_(/*18.32*/routes/*18.38*/.PersonController.add()),format.raw/*18.61*/("""" method="post">
+                <form action=""""),_display_(/*19.32*/routes/*19.38*/.PersonController.add()),format.raw/*19.61*/("""" method="post">
 
                     <div class="form-group">
                         <label for="id">ID</label>
@@ -84,30 +81,32 @@ Seq[Any](format.raw/*8.26*/("""
                     </thead>
                     <tbody id="personBody">
 
-                        """),_display_(/*57.26*/for(person <- persons) yield /*57.48*/{_display_(Seq[Any](format.raw/*57.49*/("""
-                            """),format.raw/*58.29*/("""<td>"""),_display_(/*58.34*/person/*58.40*/.getId),format.raw/*58.46*/("""</td>
-                            <td>"""),_display_(/*59.34*/person/*59.40*/.getName),format.raw/*59.48*/("""</td>
-                            <td>"""),_display_(/*60.34*/person/*60.40*/.getSurname),format.raw/*60.51*/("""</td>
-                            <td>"""),_display_(/*61.34*/person/*61.40*/.getGender),format.raw/*61.50*/("""</td>
-                            """),_display_(/*62.30*/defining("/delete/" + person.getId)/*62.65*/ { deleteUrl =>_display_(Seq[Any](format.raw/*62.80*/("""
-                            """),format.raw/*63.29*/("""<td><a href=""""),_display_(/*63.43*/deleteUrl),format.raw/*63.52*/("""" class='form-control'>Delete</a></td>
-                            """)))}),format.raw/*64.30*/("""
-                        """)))}),format.raw/*65.26*/("""
+                        """),_display_(/*58.26*/for( (personId, personObject) <- persons) yield /*58.67*/{_display_(Seq[Any](format.raw/*58.68*/("""
+                            """),format.raw/*59.29*/("""<tr>
+                                <td>"""),_display_(/*60.38*/personId),format.raw/*60.46*/("""</td>
+                                <td>"""),_display_(/*61.38*/personObject/*61.50*/.getName),format.raw/*61.58*/("""</td>
+                                <td>"""),_display_(/*62.38*/personObject/*62.50*/.getSurname),format.raw/*62.61*/("""</td>
+                                <td>"""),_display_(/*63.38*/personObject/*63.50*/.getGender),format.raw/*63.60*/("""</td>
+                                """),_display_(/*64.34*/defining("/delete/" + personId)/*64.65*/ { deleteUrl =>_display_(Seq[Any](format.raw/*64.80*/("""
+                                """),format.raw/*65.33*/("""<td><a href=""""),_display_(/*65.47*/deleteUrl),format.raw/*65.56*/("""" class='form-control'>Delete</a></td>
+                                """)))}),format.raw/*66.34*/("""
+                            """),format.raw/*67.29*/("""</tr>
+                        """)))}),format.raw/*68.26*/("""
 
-                    """),format.raw/*67.21*/("""</tbody>
+                    """),format.raw/*70.21*/("""</tbody>
                 </table>
             </div>
         </div>
     </div>
-""")))}),format.raw/*72.2*/("""
+""")))}),format.raw/*75.2*/("""
 """))
       }
     }
   }
 
-  def render(persons:List[Person]): play.twirl.api.HtmlFormat.Appendable = apply(persons)
+  def render(persons:util.HashMap[Integer, Person]): play.twirl.api.HtmlFormat.Appendable = apply(persons)
 
-  def f:((List[Person]) => play.twirl.api.HtmlFormat.Appendable) = (persons) => apply(persons)
+  def f:((util.HashMap[Integer, Person]) => play.twirl.api.HtmlFormat.Appendable) = (persons) => apply(persons)
 
   def ref: this.type = this
 
@@ -115,22 +114,17 @@ Seq[Any](format.raw/*8.26*/("""
 
 
 }
+}
 
-/*
- * Call the the `main` template with two arguments. The first
- * argument is a `String` with the title of the page, the second
- * argument is an `Html` object containing the body of the page.
-
-@main("Welcome to Play")("Testtt")
-*/
-object index extends index_Scope0.index
+/**/
+object index extends index_Scope0.index_Scope1.index
               /*
                   -- GENERATED --
-                  DATE: Fri Mar 11 23:06:09 EET 2016
+                  DATE: Thu Mar 17 21:24:54 EET 2016
                   SOURCE: /home/wora/activator-dist-1.3.7/MyApps/app/views/index.scala.html
-                  HASH: 8555a65e818dc789afd89502ca34955e84b0cb25
-                  MATRIX: 980->235|1099->259|1130->264|1162->287|1201->288|1235->295|1378->411|1393->417|1437->440|2980->1956|3018->1978|3057->1979|3114->2008|3146->2013|3161->2019|3188->2025|3254->2064|3269->2070|3298->2078|3364->2117|3379->2123|3411->2134|3477->2173|3492->2179|3523->2189|3585->2224|3629->2259|3682->2274|3739->2303|3780->2317|3810->2326|3909->2394|3966->2420|4016->2442|4126->2522
-                  LINES: 33->8|38->8|42->12|42->12|42->12|45->15|48->18|48->18|48->18|87->57|87->57|87->57|88->58|88->58|88->58|88->58|89->59|89->59|89->59|90->60|90->60|90->60|91->61|91->61|91->61|92->62|92->62|92->62|93->63|93->63|93->63|94->64|95->65|97->67|102->72
+                  HASH: b17c432887499ddbfbc8e7d4e4809530fff4d53f
+                  MATRIX: 813->253|948->293|979->298|1011->321|1050->322|1084->329|1227->445|1242->451|1286->474|2829->1990|2886->2031|2925->2032|2982->2061|3051->2103|3080->2111|3150->2154|3171->2166|3200->2174|3270->2217|3291->2229|3323->2240|3393->2283|3414->2295|3445->2305|3511->2344|3551->2375|3604->2390|3665->2423|3706->2437|3736->2446|3839->2518|3896->2547|3958->2578|4008->2600|4118->2680
+                  LINES: 30->9|35->9|39->13|39->13|39->13|42->16|45->19|45->19|45->19|84->58|84->58|84->58|85->59|86->60|86->60|87->61|87->61|87->61|88->62|88->62|88->62|89->63|89->63|89->63|90->64|90->64|90->64|91->65|91->65|91->65|92->66|93->67|94->68|96->70|101->75
                   -- GENERATED --
               */
           

@@ -1,7 +1,8 @@
 # Simple-Play-Application
 
-This is your new Play application
-=================================
+### Created by Wora, visit [My Blog](www.alicanakkus.com)
+
+
 
 This file will be packaged with your application when using `activator dist`.
 
@@ -10,42 +11,43 @@ There are several demonstration files available in this template.
 Controllers
 ===========
 
-- HomeController.java:
+    - PersonController.java:
 
-  Shows how to handle simple HTTP requests.
+  Show how to handle crud operations for Person
 
-- AsyncController.java:
+    - HomeController.java:
 
-  Shows how to do asynchronous programming when handling a request.
+  Render all person to view
 
-- CountController.java:
+Views
+=====
 
-  Shows how to inject a component into a controller and use the component when
-  handling requests.
+    - index.scala.html:
 
-Components
-==========
+  Contains list of all person and form for insert new person.
 
-- Module.java:
+    - main.scala.html:
 
-  Shows how to use Guice to bind all the components needed by your application.
+  Main page for application, contains index template, in other words index template call main template.
 
-- Counter.java:
 
-  An example of a component that contains state, in this case a simple counter.
+Routes
+======
 
-- ApplicationTimer.java:
+    - Add new person
 
-  An example of a component that starts when the application starts and stops
-  when the application stops.
+  HTTP POST method to url /add
 
-Filters
-=======
+    - Get person
 
-- Filters.java:
+  HTTP GET method to url /getPersons
 
-  Creates the list of HTTP filters used by your application.
+    - View all person
 
-- ExampleFilter.java
+  HTTP GET method to url /getPersons get all person for view
 
-  A simple filter that adds a header to every response.
+    - Remove person
+  HTTP GET method to url /delete/:id remove person by id
+
+    - Remove all person
+  HTTP GET method to url /removeAll remove all person

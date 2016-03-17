@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wora/activator-dist-1.3.7/MyApps/conf/routes
-// @DATE:Fri Mar 11 22:37:03 EET 2016
+// @DATE:Thu Mar 17 20:20:02 EET 2016
 
 
 package router {
